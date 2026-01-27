@@ -109,18 +109,18 @@ const Footer = () => {
                         <ul className="space-y-6">
                             <li className="flex items-start gap-4">
                                 <FaMapMarkerAlt className="text-yellow-500 text-xl mt-1 shrink-0" />
-                                <span>123 Auto District,<br />Car City, ST 400001</span>
+                                <span>Plot No:128/4506, Koradakanta<br />Bhubaneswar , Khorda, Odisha - 75106</span>
                             </li>
                             <li className="flex items-center gap-4">
                                 <FaPhone className="text-yellow-500 shrink-0" />
                                 <a href="tel:+919876543210" className="hover:text-yellow-500 transition-colors">
-                                    +91 98765 43210
+                                    +91 73772 00009
                                 </a>
                             </li>
                             <li className="flex items-center gap-4">
                                 <FaEnvelope className="text-yellow-500 shrink-0" />
-                                <a href="mailto:info@vahan.com" className="hover:text-yellow-500 transition-colors">
-                                    info@vahan.com
+                                <a href="mailto:info@vahandetailing.com" className="hover:text-yellow-500 transition-colors">
+                                    info@vahandetailing.com
                                 </a>
                             </li>
                         </ul>

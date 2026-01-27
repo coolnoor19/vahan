@@ -74,10 +74,10 @@ const Contact = () => {
                         {/* Contact Cards */}
                         <div className="grid gap-6">
                             {[
-                                { icon: FaPhone, title: "Call Us", value: "+91 98765 43210", link: "tel:+919876543210" },
+                                { icon: FaPhone, title: "Call Us", value: "+91 73772 00009", link: "tel:+919876543210" },
                                 { icon: FaWhatsapp, title: "WhatsApp", value: "Chat Now", link: "https://wa.me/919876543210" },
-                                { icon: FaEnvelope, title: "Email Us", value: "contact@vahan.com", link: "mailto:contact@vahan.com" },
-                                { icon: FaMapMarkerAlt, title: "Visit Us", value: "123 Premium Garage Lane, Auto City", link: "#" }
+                                { icon: FaEnvelope, title: "Email Us", value: "info@vahandetailing.com", link: "mailto:info@vahandetailing.com" },
+                                { icon: FaMapMarkerAlt, title: "Visit Us", value: "Plot No:128/4506 , Koradakanta , Bhubaneswar, Khordha, Odisha - 75106", link: "#" }
                             ].map((item, idx) => (
                                 <motion.a
                                     key={idx}
