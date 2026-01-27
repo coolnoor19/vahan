@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion';
 import { FaYoutube, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { DecryptedText } from './react-bits/DecryptedText';
 
 const StatsSection = () => {
     const stats = [
         {
-            value: "10,000+",
+            value: "10000+",
             label: "Happy Customers",
             type: "business",
             bgClass: "bg-gray-800"
         },
         {
-            value: "30,000+",
+            value: "30000+",
             label: "Hours of Work",
             type: "business",
             bgClass: "bg-gray-800"
         },
         {
-            value: "4,000+",
+            value: "4000+",
             label: "Projects Handled",
             type: "business",
             bgClass: "bg-gray-800"
@@ -28,7 +29,7 @@ const StatsSection = () => {
             bgClass: "bg-gray-800"
         },
         {
-            value: "2,110,000+",
+            value: "2110000+",
             label: "YouTube",
             type: "social",
             icon: FaYoutube,
@@ -36,7 +37,7 @@ const StatsSection = () => {
             link: "https://youtube.com"
         },
         {
-            value: "1,400,000+",
+            value: "1400000+",
             label: "Instagram",
             type: "social",
             icon: FaInstagram,
@@ -44,7 +45,7 @@ const StatsSection = () => {
             link: "https://instagram.com"
         },
         {
-            value: "2,250,000+",
+            value: "2250000+",
             label: "Facebook",
             type: "social",
             icon: FaFacebookF,
@@ -71,9 +72,18 @@ const StatsSection = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className={`${stat.bgClass} rounded-xl p-6 flex flex-col justify-center items-center text-center`}
                             >
-                                <h3 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-2">
-                                    {stat.value}
-                                </h3>
+                                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-2">
+                                    <DecryptedText
+                                        text={stat.value}
+                                        speed={50}
+                                        maxIterations={20}
+                                        characters="1234567890"
+                                        animateOn="view"
+                                        revealDirection="end"
+                                        parentClassName="inline-block"
+                                        className="inline-block"
+                                    />
+                                </div>
                                 <p className="text-sm text-gray-300">
                                     {stat.label}
                                 </p>

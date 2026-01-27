@@ -1,102 +1,111 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaSprayCan, FaShieldAlt, FaCarSide, FaTools, FaCarCrash } from 'react-icons/fa';
+import { BentoGrid, BentoGridItem } from './ui/BentoGrid';
+import { TiltedCard } from './react-bits/TiltedCard';
 
 const ServicesGrid = () => {
     const services = [
         {
             title: "Paint Protection Film",
+            description: "Shield your car's paint from scratches and rock chips with our premium self-healing PPF.",
             image: "/services/ppf.jpg",
-            link: "/services/ppf"
+            link: "/services/ppf",
+            icon: <FaShieldAlt className="h-4 w-4 text-neutral-500" />,
+            colSpan: "md:col-span-1"
         },
         {
             title: "Ceramic & Graphene Coating",
+            description: "Achieve unmatched gloss and long-lasting protection with our advanced coating solutions.",
             image: "/services/ceramic.jpg",
-            link: "/services/coatings"
+            link: "/services/coatings",
+            icon: <FaSprayCan className="h-4 w-4 text-neutral-500" />,
+            colSpan: "md:col-span-2"
         },
         {
             title: "Panel Painting",
+            description: "Expert color matching and refinishing for specific panels to restore factory perfection.",
             image: "/services/panel-painting.jpg",
-            link: "/services/denting-painting"
+            link: "/services/denting-painting",
+            icon: <FaTools className="h-4 w-4 text-neutral-500" />,
+            colSpan: "md:col-span-1"
         },
         {
             title: "Full Body Painting",
+            description: "Complete restoration or color change services using high-quality automotive paints.",
             image: "/services/full-body-painting.jpg",
-            link: "/services/denting-painting"
+            link: "/services/denting-painting",
+            icon: <FaCarSide className="h-4 w-4 text-neutral-500" />,
+            colSpan: "md:col-span-1"
         },
         {
-            title: "Insurance/Accidental Repair",
+            title: "Insurance Repair",
+            description: "Hassle-free insurance claims and accidental repairs to get you back on the road.",
             image: "/services/insurance.jpg",
-            link: "/services/insurance"
+            link: "/services/insurance",
+            icon: <FaCarCrash className="h-4 w-4 text-neutral-500" />,
+            colSpan: "md:col-span-1"
         }
     ];
 
     return (
-        <section className="bg-black text-white py-20">
+        <section className="bg-black text-white py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="mb-12">
-                    <h2 className="text-4xl md:text-5xl font-black uppercase mb-4">
+                <div className="mb-16">
+                    <h2 className="text-4xl md:text-5xl font-black uppercase mb-6">
                         WHAT WE <span className="text-yellow-500">DO</span>
                     </h2>
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                        <p className="text-gray-400 text-sm md:text-base max-w-4xl leading-relaxed">
-                            At Brotomotiv, we provide expert paint correction, paint protection and detailing services to enhance your car's appearance and protect its finish. Our body shop handles repairs for dents and scratches, while customization options like custom colors and body kits add a personalized touch. Experience holistic vehicle care with precision and attention to detail.
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+                        <p className="text-gray-400 text-lg max-w-3xl leading-relaxed font-light">
+                            At Vahan, we provide expert paint correction, protection and detailing services to enhance your car's appearance.
+                            Experience holistic vehicle care with precision and attention to detail.
                         </p>
                         <Link
                             to="/services"
-                            className="flex items-center text-yellow-500 hover:text-yellow-400 font-semibold whitespace-nowrap transition-colors group"
+                            className="flex items-center px-6 py-3 border border-yellow-500/30 rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-black font-semibold whitespace-nowrap transition-all duration-300 group"
                         >
-                            More <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                            View All Services <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
                 </div>
 
-                {/* Services Grid */}
-                <div className="bg-gray-900 rounded-2xl p-8 md:p-12">
-                    <h3 className="text-2xl md:text-3xl font-bold uppercase mb-8">
-                        CHOOSE FROM A RANGE OF <span className="text-yellow-500">PREMIUM SERVICES</span>
-                    </h3>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                            >
-                                <Link
-                                    to={service.link}
-                                    className="group block relative overflow-hidden rounded-lg bg-gray-800 hover:ring-2 hover:ring-yellow-500 transition-all duration-300"
-                                >
-                                    {/* Service Image */}
-                                    <div className="aspect-[4/5] overflow-hidden">
-                                        <img
-                                            src={service.image}
-                                            alt={service.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                {/* Aceternity Bento Grid */}
+                <BentoGrid className="max-w-7xl mx-auto">
+                    {services.map((service, i) => (
+                        <BentoGridItem
+                            key={i}
+                            title={service.title}
+                            description={service.description}
+                            header={
+                                <Link to={service.link} className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative group">
+                                    <div className="w-full h-full">
+                                        <TiltedCard
+                                            imageSrc={service.image}
+                                            altText={service.title}
+                                            containerHeight="100%"
+                                            containerWidth="100%"
+                                            imageHeight="100%"
+                                            imageWidth="100%"
+                                            rotateAmplitude={7}
+                                            scaleOnHover={1.05}
+                                            showTooltip={false}
+                                            overlayContent={
+                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+                                            }
+                                            displayOverlayContent={true}
                                         />
                                     </div>
-
-                                    {/* Service Title Overlay */}
-                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-4">
-                                        <div className="flex items-center justify-between">
-                                            <h4 className="text-sm font-semibold text-white">
-                                                {service.title}
-                                            </h4>
-                                            <FaArrowRight className="text-yellow-500 text-xs group-hover:translate-x-1 transition-transform" />
-                                        </div>
-                                    </div>
                                 </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+                            }
+                            icon={service.icon}
+                            className={i === 1 || i === 3 ? "md:col-span-2" : ""}
+                        />
+                    ))}
+                </BentoGrid>
             </div>
         </section>
     );
 };
+
 
 export default ServicesGrid;
