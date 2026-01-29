@@ -12,12 +12,13 @@ import { BlurText } from '../components/react-bits/BlurText';
 import { Magnet } from '../components/react-bits/Magnet';
 
 // Import images from assets folder
+import heroImg1 from '../assets/hero_ceramic_coating_1768887606831.png';
 import heroImg2 from '../assets/hero_luxury_interior_1768887637851.png';
 import heroImg3 from '../assets/hero_ppf_polishing_1768887667898.png';
 
 const slides = [
     {
-        image: '/hero/vahan.jpg', // Public folder assets are referenced directly
+        image: heroImg1,
         title: "Ceramic Protection",
         subtitle: "Unmatched Gloss & Durability",
         description: "Shield your vehicle with our premium ceramic and graphene coatings for a showroom shine that lasts.",
@@ -58,7 +59,7 @@ const Home = () => {
     return (
         <>
             {/* Hero Carousel Section */}
-            <div className="relative h-screen w-full overflow-hidden bg-neutral-950 text-white">
+            <div className="relative min-h-[100svh] w-full overflow-hidden bg-neutral-950 text-white">
                 {/* Carousel */}
                 <AnimatePresence initial={false} mode='wait'>
                     <motion.div
@@ -70,7 +71,7 @@ const Home = () => {
                         className="absolute inset-0"
                     >
                         <div
-                            className="absolute inset-0 bg-cover bg-center"
+                            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                             style={{ backgroundImage: `url(${slides[current].image})` }}
                         />
                         {/* Overlay Gradient */}
