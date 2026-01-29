@@ -79,6 +79,16 @@ export const servicesData = {
         icon: <FaCogs />,
         description: "Personalize your vehicle with our range of premium accessories. From dash cams and ambient lighting to seat covers and custom mats, we offer high-quality installations that enhance comfort, style, and utility.",
         heroImage: interiorImg, // Reuse interior
+        showcaseImages: [
+            { src: "/logo/BIMBRA LOGO.png", alt: "XPEL PPF" },
+            { src: "/logo/auto stylenn.png", alt: "SUNTEK PPF" },
+            { src: "/logo/toughdog logo.png", alt: "PaintGuard PPF" },
+            { src: "/logo/moco logo.png", alt: "Tint Orange" },
+            { src: "/logo/mi logo.jpg", alt: "PaintGuard PPF" },
+            { src: "/logo/azoom logo.png", alt: "Tint Orange" },
+            { src: "/logo/lightforce logo.png", alt: "PaintGuard PPF" },
+            { src: "/logo/auto form logo.png", alt: "Tint Orange" },
+        ],
         benefits: [
             { title: "Custom Fit", desc: "Accessories tailored specifically for your car model." },
             { title: "Professional Install", desc: "Clean wiring and secure mounting by experts." },
