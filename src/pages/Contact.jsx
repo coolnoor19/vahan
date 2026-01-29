@@ -105,9 +105,27 @@ const Contact = () => {
                                 Follow Our Work <div className="h-px flex-1 bg-gray-800"></div>
                             </h3>
                             <div className="flex gap-4">
-                                {[FaInstagram, FaFacebookF, FaYoutube].map((Icon, i) => (
+                                {[
+                                    {
+                                        Icon: FaInstagram,
+                                        url: "https://www.instagram.com/vahandetailing/"
+                                    },
+                                    {
+                                        Icon: FaFacebookF,
+                                        url: "https://www.facebook.com/profile.php?id=100088953143492"
+                                    },
+                                    {
+                                        Icon: FaYoutube,
+                                        url: "https://www.youtube.com/channel/UC8_NgeWugVeVH6PMVUKo-5g"
+                                    }
+                                ].map(({ Icon, url }, i) => (
                                     <Magnet key={i} padding={50} magnetStrength={3}>
-                                        <a href="#" className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 text-xl">
+                                        <a
+                                            href={url}
+                                            className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 text-xl"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <Icon />
                                         </a>
                                     </Magnet>
