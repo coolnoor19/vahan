@@ -29,12 +29,12 @@ const About = () => {
         <div className="bg-neutral-900 min-h-screen pt-20">
             {/* Hero Section */}
             <section className="relative h-[60vh] overflow-hidden flex items-center justify-center">
-                <div
+                {/* <div
                     className="absolute inset-0 bg-cover bg-center bg-fixed transform scale-105"
                     style={{ backgroundImage: 'url("/about/about.jpg")' }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/80 via-neutral-900/60 to-neutral-900"></div>
-                </div>
+                </div> */}
 
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                     <motion.div
