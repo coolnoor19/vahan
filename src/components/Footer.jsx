@@ -22,10 +22,10 @@ const Footer = () => {
     };
 
     const socialLinks = [
-        { icon: <FaInstagram />, url: 'https://instagram.com', color: 'hover:text-pink-500' },
-        { icon: <FaFacebook />, url: 'https://facebook.com', color: 'hover:text-blue-500' },
-        { icon: <FaYoutube />, url: 'https://youtube.com', color: 'hover:text-red-500' },
-        { icon: <FaWhatsapp />, url: 'https://whatsapp.com', color: 'hover:text-green-500' }
+        { icon: <FaInstagram />, url: 'https://www.instagram.com/vahandetailing/', color: 'hover:text-pink-500' },
+        { icon: <FaFacebook />, url: 'https://www.facebook.com/profile.php?id=100088953143492', color: 'hover:text-blue-500' },
+        { icon: <FaYoutube />, url: 'https://www.youtube.com/channel/UC8_NgeWugVeVH6PMVUKo-5g', color: 'hover:text-red-500' },
+        // { icon: <FaWhatsapp />, url: 'https://whatsapp.com', color: 'hover:text-green-500' }
     ];
 
     return (
