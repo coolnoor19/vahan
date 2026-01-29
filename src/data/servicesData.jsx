@@ -124,6 +124,9 @@ export const servicesData = {
         icon: <FaLayerGroup />,
         description: "Bored of your car's color? Change it instantly with our premium vinyl wraps. Choose from matte, satin, gloss, or color-shift finishes. Protects original paint while giving your car a completely new identity.",
         heroImage: ceramicImg, // Placeholder
+        showcaseImages: [
+            { src: "/logo/AVERY DENNISON.png", alt: "XPEL PPF" },
+        ],
         benefits: [
             { title: "Reversible", desc: "Can be removed anytime without damaging original paint." },
             { title: "Customization", desc: "Endless color and texture options available." },
