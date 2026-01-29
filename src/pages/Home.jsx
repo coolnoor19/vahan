@@ -171,7 +171,7 @@ const Home = () => {
                         {/* Left - Bold Statement */}
                         <div className="relative z-10">
                             <SplitText
-                                className="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-8"
+                                className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8"
                                 delay={50}
                                 animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                                 animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -179,7 +179,7 @@ const Home = () => {
                                 rootMargin="-50px"
                                 textAlign="left"
                             >
-                                At Vahan, we don't just service cars - we build excellence
+                                At VahanDetailing, we don't just service cars - we build excellence
                             </SplitText>
 
                             <motion.div
@@ -193,43 +193,63 @@ const Home = () => {
 
                         {/* Right - Premium VAHAN Interactions */}
                         <div className="flex justify-center lg:justify-end relative">
-                            {/* Senior Developer Level Microinteraction: Text Mask Reveal */}
-                            <div className="relative cursor-default group" aria-label="VAHAN">
-                                {/* Base Layer: Outline Text */}
-                                <h3 className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-transparent"
+                            {/* Gorgeous VAHANDETAILING Showcase */}
+                            <div
+                                className="relative flex items-end"
+                                aria-label="VahanDetailing"
+                                style={{ minWidth: "min(440px,90vw)", minHeight: "100px" }}
+                            >
+                                {/* Shadow/Glow Behind */}
+                                <motion.div
+                                    className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-4/5 bg-yellow-400/10 blur-[64px] rounded-full pointer-events-none z-0"
+                                    initial={{ opacity: 0, scale: 0.7 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1.1, delay: 0.25 }}
+                                />
+                                {/* Back Layer - Outline full text */}
+                                <h3
+                                    className="font-black tracking-tight text-transparent leading-none select-none z-10"
                                     style={{
-                                        WebkitTextStroke: '1px rgba(255, 255, 255, 0.2)',
-                                    }}>
-                                    VAHAN
+                                        WebkitTextStroke: '2px #d1d5db',
+                                        fontSize: 'clamp(2.5rem, 7vw, 6.5rem)'
+                                    }}
+                                >
+                                    Vahan
+                                    <span
+                                        className="text-transparent"
+                                        style={{ WebkitTextStroke: '2px #a3a3a3' }}
+                                    >Detailing</span>
                                 </h3>
-
-                                {/* Animated Layer: Gradient Fill that fills on hover/view */}
+                                {/* Animated Gradient Reveal */}
                                 <motion.h3
-                                    className="absolute top-0 left-0 text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-400 to-gray-600"
+                                    className="absolute top-0 left-0 font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-100 to-gray-500 overflow-hidden leading-none select-none z-20"
+                                    style={{
+                                        fontSize: 'clamp(2.5rem, 7vw, 6.5rem)'
+                                    }}
                                     initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
                                     whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 1.5, ease: "circOut", delay: 0.5 }}
+                                    transition={{ duration: 1.4, ease: "circOut", delay: 0.5 }}
                                 >
-                                    VAHAN
+                                    Vahan
+                                    <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-gray-200 bg-clip-text text-transparent">Detailing</span>
                                 </motion.h3>
-
-                                {/* Accent Highlight - Gold Stroke appears on top */}
+                                {/* Gold Stroke only on VAHAN part for accent */}
                                 <motion.h3
-                                    className="absolute top-0 left-0 text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-transparent"
+                                    className="absolute top-0 left-0 font-black tracking-tight text-transparent leading-none select-none z-30"
                                     style={{
-                                        WebkitTextStroke: '2px #EAB308', /* yellow-500 */
+                                        WebkitTextStroke: '2.5px #EAB308',
+                                        fontSize: 'clamp(2.5rem, 7vw, 6.5rem)',
                                     }}
-                                    initial={{ opacity: 0, x: -10, y: -10 }}
-                                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                                    initial={{ opacity: 0, y: 15 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 1.2, delay: 1, type: "spring" }}
                                 >
-                                    VAHAN
+                                    <span style={{ WebkitTextStroke: '2.5px #EAB308' }}>Vahan</span>
+                                    <span style={{ WebkitTextStroke: '0' }} className="text-transparent">Detailing</span>
                                 </motion.h3>
-
-                                {/* Decorative Background Glow */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-yellow-500/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                             </div>
                         </div>
                     </div>

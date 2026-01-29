@@ -10,7 +10,7 @@ const ReviewsSection = () => {
             name: "Rajesh Kumar",
             location: "Mumbai",
             rating: 5,
-            review: "Absolutely phenomenal service! The ceramic coating on my BMW looks stunning. The team was professional, and the attention to detail was exceptional. Highly recommend VAHAN for premium car care!",
+            review: "Absolutely phenomenal service! The ceramic coating on my BMW looks stunning. The team was professional, and the attention to detail was exceptional. Highly recommend VahanDetailing for premium car care!",
             service: "Ceramic Coating",
             gradient: "from-purple-500 to-pink-500"
         },

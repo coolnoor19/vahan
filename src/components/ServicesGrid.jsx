@@ -57,7 +57,7 @@ const ServicesGrid = () => {
                     </h2>
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
                         <p className="text-gray-400 text-lg max-w-3xl leading-relaxed font-light">
-                            At Vahan, we provide expert paint correction, protection and detailing services to enhance your car's appearance.
+                            At VahanDetailing, we provide expert paint correction, protection and detailing services to enhance your car's appearance.
                             Experience holistic vehicle care with precision and attention to detail.
                         </p>
                         <Link

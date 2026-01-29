@@ -50,9 +50,9 @@ const About = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-6xl md:text-8xl font-black text-white mb-8"
+                        className="text-6xl md:text-7xl font-black text-white mb-8"
                     >
-                        ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">VAHAN</span>
+                        About <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">VahanDetailing</span>
                     </motion.h1>
 
                     <motion.p
@@ -81,7 +81,7 @@ const About = () => {
                         </h2>
                         <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
                             <p>
-                                Founded in 2014, VAHAN started with a simple belief: every vehicle deserves to look as good as the day it left the showroom, if not better. What began as a small garage project has grown into a premier detailing studio trusted by luxury car owners across the region.
+                                Founded in 2014, VahanDetailing started with a simple belief: every vehicle deserves to look as good as the day it left the showroom, if not better. What began as a small garage project has grown into a premier detailing studio trusted by luxury car owners across the region.
                             </p>
                             <p>
                                 Our team consists of certified professionals who share a deep passion for automotive aesthetics. We treat every car that enters our studio as a canvas, using world-class products and techniques to restore and protect its beauty.
@@ -187,7 +187,7 @@ const About = () => {
 
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10">Ready to Transform Your Ride?</h2>
                     <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto relative z-10">
-                        Experience the difference that true passion and expertise make. Visit VAHAN today.
+                        Experience the difference that true passion and expertise make. Visit VahanDetailing today.
                     </p>
                     <a href="/contact" className="inline-block bg-yellow-500 text-black font-bold py-4 px-8 rounded-full hover:bg-yellow-400 transition-colors transform hover:scale-105 shadow-xl relative z-10">
                         Get a Free Quote
