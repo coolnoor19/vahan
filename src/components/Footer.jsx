@@ -16,8 +16,6 @@ const Footer = () => {
         company: [
             { name: 'About Us', path: '/about' },
             { name: 'Contact', path: '/contact' },
-            { name: 'Portfolio', path: '/portfolio' },
-            { name: 'Reviews', path: '/reviews' }
         ]
     };
 
@@ -35,7 +33,6 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="space-y-6">
                         <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2">
-                            <span className="text-yellow-500 text-3xl">⚡</span>
                             <img src="/logo.png" alt="VAHAN" width={100} height={100} />
                         </Link>
                         <p className="text-neutral-400 leading-relaxed">
