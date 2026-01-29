@@ -11,6 +11,14 @@ export const servicesData = {
         icon: <FaGem />,
         description: "Experience the pinnacle of paint protection with our advanced Ceramic and Graphene coatings. These nanoscopic layers bond permanently to your vehicle's paint, creating a sacrificial barrier that repels water, dirt, and UV rays while enhancing gloss to an incredible level.",
         heroImage: ceramicImg,
+        showcaseImages: [
+            { src: "/ceramic/xpel%20logo.png", alt: "XPEL PPF" },
+            { src: "/ceramic/detailmax.png", alt: "SUNTEK PPF" },
+            { src: "/ceramic/paintguard%20logo.png", alt: "PaintGuard PPF" },
+            { src: "/ceramic/menzerna logo.png", alt: "Tint Orange" },
+            { src: "/ceramic/Saint-Gobain_logo.svg.png", alt: "PaintGuard PPF" },
+            { src: "/ceramic/turtle-wax-logo.avif", alt: "Tint Orange" },
+        ],
         benefits: [
             { title: "9H/10H Hardness", desc: "Superior resistance against minor scratches and swirl marks." },
             { title: "Hydrophobic", desc: "Water beads up and rolls off, taking dirt with it." },
