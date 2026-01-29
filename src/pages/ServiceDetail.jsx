@@ -61,6 +61,48 @@ const ServiceDetail = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                         >
+                            {Array.isArray(service.showcaseImages) && service.showcaseImages.length > 0 && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 16 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.3 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    className="mb-10"
+                                >
+                                    <div className="flex items-end justify-between gap-4 mb-4">
+                                        <h2 className="text-xl font-bold text-white">PPF Film Brands</h2>
+                                        <span className="text-xs text-gray-500">Trusted partners</span>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                                        {service.showcaseImages.map((img, index) => (
+                                            <motion.div
+                                                key={`${img.src}-${index}`}
+                                                initial={{ opacity: 0, y: 12 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                viewport={{ once: true, amount: 0.3 }}
+                                                transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
+                                                whileHover={{ y: -6, scale: 1.02 }}
+                                                whileTap={{ scale: 0.99 }}
+                                                className="group relative overflow-hidden rounded-2xl border border-gray-800 bg-gradient-to-b from-gray-900 to-gray-950 p-4 sm:p-6"
+                                            >
+                                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-yellow-500/10 via-transparent to-transparent" />
+
+                                                <div className="relative flex items-center justify-center">
+                                                    <img
+                                                        src={img.src}
+                                                        alt={img.alt || "PPF showcase"}
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                        className="h-14 sm:h-16 lg:h-14 w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                                                    />
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+
                             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                                 <span className="text-yellow-500 text-3xl">{service.icon}</span>
                                 Overview

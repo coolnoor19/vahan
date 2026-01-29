@@ -90,6 +90,12 @@ export const servicesData = {
         icon: <FaShieldAlt />,
         description: "The ultimate defense against road debris, rock chips, and scratches. Our TPU Paint Protection Films are virtually invisible, self-healing, and provide a thick layer of protection for your vehicle's most vulnerable areas.",
         heroImage: ppfImg,
+        showcaseImages: [
+            { src: "/ppf/xpel%20logo.png", alt: "XPEL PPF" },
+            { src: "/ppf/SUNTEK%20LOGO.jpg", alt: "SUNTEK PPF" },
+            { src: "/ppf/paintguard%20logo.png", alt: "PaintGuard PPF" },
+            { src: "/ppf/Tint-Orange-Logo.png", alt: "Tint Orange" },
+        ],
         benefits: [
             { title: "Self-Healing", desc: "Scratches disappear with heat exposure." },
             { title: "Impact Resistance", desc: "Protects against stone chips and minor abrasions." },
