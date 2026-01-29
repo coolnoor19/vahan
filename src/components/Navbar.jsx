@@ -23,7 +23,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                            VAHAN
+                            <img src="/logo.png" alt="VAHAN" width={200} height={200} />
                         </Link>
                     </div>
 

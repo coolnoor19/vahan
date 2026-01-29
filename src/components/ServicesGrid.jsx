@@ -8,7 +8,7 @@ const ServicesGrid = () => {
         {
             title: "Paint Protection Film",
             description: "Shield your car's paint from scratches and rock chips with our premium self-healing PPF.",
-            image: "/services/ppf.jpg",
+            image: "/gallery/Defender.jpg",
             link: "/services/ppf",
             icon: <FaShieldAlt className="h-4 w-4 text-neutral-500" />,
             colSpan: "md:col-span-1"
@@ -16,7 +16,7 @@ const ServicesGrid = () => {
         {
             title: "Ceramic & Graphene Coating",
             description: "Achieve unmatched gloss and long-lasting protection with our advanced coating solutions.",
-            image: "/services/ceramic.jpg",
+            image: "/gallery/Maruti Fronx.jpg",
             link: "/services/coatings",
             icon: <FaSprayCan className="h-4 w-4 text-neutral-500" />,
             colSpan: "md:col-span-2"
@@ -24,7 +24,7 @@ const ServicesGrid = () => {
         {
             title: "Panel Painting",
             description: "Expert color matching and refinishing for specific panels to restore factory perfection.",
-            image: "/services/panel-painting.jpg",
+            image: "/gallery/Raven Thar Part 1.jpg",
             link: "/services/denting-painting",
             icon: <FaTools className="h-4 w-4 text-neutral-500" />,
             colSpan: "md:col-span-1"
@@ -32,7 +32,7 @@ const ServicesGrid = () => {
         {
             title: "Full Body Painting",
             description: "Complete restoration or color change services using high-quality automotive paints.",
-            image: "/services/full-body-painting.jpg",
+            image: "/gallery/Kia Sonet Dent Paint.jpg",
             link: "/services/denting-painting",
             icon: <FaCarSide className="h-4 w-4 text-neutral-500" />,
             colSpan: "md:col-span-1"
@@ -40,7 +40,7 @@ const ServicesGrid = () => {
         {
             title: "Insurance Repair",
             description: "Hassle-free insurance claims and accidental repairs to get you back on the road.",
-            image: "/services/insurance.jpg",
+            image: "/gallery/Mahindra 300.jpg",
             link: "/services/insurance",
             icon: <FaCarCrash className="h-4 w-4 text-neutral-500" />,
             colSpan: "md:col-span-1"
