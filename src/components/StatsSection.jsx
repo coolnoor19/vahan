@@ -1,6 +1,49 @@
-import { motion } from 'framer-motion';
+import { motion, animate, useInView } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { FaYoutube, FaInstagram, FaFacebookF } from 'react-icons/fa';
-import { DecryptedText } from './react-bits/DecryptedText';
+
+const parseStatValue = (value) => {
+    const raw = String(value ?? "");
+    const numberPart = raw.replace(/[^\d]/g, "");
+    const suffix = raw.replace(/[\d\s,]/g, "") || "";
+    const target = Number(numberPart || 0);
+    return { target, suffix };
+};
+
+const CountUpStat = ({ value, duration = 1.4 }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.6 });
+
+    const { target, suffix } = useMemo(() => parseStatValue(value), [value]);
+    const [display, setDisplay] = useState(0);
+
+    useEffect(() => {
+        if (!isInView) return;
+
+        setDisplay(0);
+        const controls = animate(0, target, {
+            duration,
+            ease: [0.16, 1, 0.3, 1], // smooth ease-out
+            onUpdate: (latest) => setDisplay(Math.round(latest)),
+        });
+
+        return () => controls.stop();
+    }, [duration, isInView, target]);
+
+    const formatted = useMemo(() => {
+        // Indian grouping for large numbers (e.g., 21,10,000)
+        return new Intl.NumberFormat("en-IN").format(display);
+    }, [display]);
+
+    return (
+        <span ref={ref} className="inline-flex items-baseline">
+            <span className="inline-block drop-shadow-[0_0_18px_rgba(234,179,8,0.25)]">
+                {formatted}
+            </span>
+            {suffix && <span className="ml-0.5">{suffix}</span>}
+        </span>
+    );
+};
 
 const StatsSection = () => {
     const stats = [
@@ -34,7 +77,7 @@ const StatsSection = () => {
             type: "social",
             icon: FaYoutube,
             bgClass: "bg-gradient-to-br from-red-400 to-red-500",
-            link: "https://youtube.com"
+            link: "https://www.youtube.com/channel/UC8_NgeWugVeVH6PMVUKo-5g"
         },
         {
             value: "1400000+",
@@ -42,7 +85,7 @@ const StatsSection = () => {
             type: "social",
             icon: FaInstagram,
             bgClass: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500",
-            link: "https://instagram.com"
+            link: "https://www.instagram.com/vahandetailing/"
         },
         {
             value: "2250000+",
@@ -50,7 +93,7 @@ const StatsSection = () => {
             type: "social",
             icon: FaFacebookF,
             bgClass: "bg-gradient-to-br from-blue-500 to-blue-600",
-            link: "https://facebook.com"
+            link: "https://www.facebook.com/profile.php?id=100088953143492"
         }
     ];
 
@@ -73,16 +116,7 @@ const StatsSection = () => {
                                 className={`${stat.bgClass} rounded-xl p-6 flex flex-col justify-center items-center text-center`}
                             >
                                 <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-2">
-                                    <DecryptedText
-                                        text={stat.value}
-                                        speed={50}
-                                        maxIterations={20}
-                                        characters="1234567890"
-                                        animateOn="view"
-                                        revealDirection="end"
-                                        parentClassName="inline-block"
-                                        className="inline-block"
-                                    />
+                                    <CountUpStat value={stat.value} />
                                 </div>
                                 <p className="text-sm text-gray-300">
                                     {stat.label}

@@ -21,6 +21,7 @@ export const DecryptedText = ({
     const [isScrambling, setIsScrambling] = useState(false);
     const [revealedIndices, setRevealedIndices] = useState(new Set());
     const intervalRef = useRef(null);
+    const stopTimeoutRef = useRef(null);
 
     useEffect(() => {
         let interval;
@@ -72,7 +73,18 @@ export const DecryptedText = ({
                 (entries) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting && !isScrambling) {
+                            // Start a new cycle when it first comes into view.
+                            setRevealedIndices(new Set());
                             setIsScrambling(true);
+
+                            // In non-sequential mode, scrambling would run forever unless we stop it.
+                            if (!sequential) {
+                                if (stopTimeoutRef.current) clearTimeout(stopTimeoutRef.current);
+                                stopTimeoutRef.current = setTimeout(() => {
+                                    setIsScrambling(false);
+                                    setDisplayText(text);
+                                }, maxIterations * speed);
+                            }
                         }
                     });
                 },
@@ -83,9 +95,10 @@ export const DecryptedText = ({
 
             return () => {
                 if (intervalRef.current) observer.unobserve(intervalRef.current);
+                if (stopTimeoutRef.current) clearTimeout(stopTimeoutRef.current);
             };
         }
-    }, [animateOn]);
+    }, [animateOn, isScrambling, maxIterations, sequential, speed, text]);
 
     const getNextIndex = (revealedSet) => {
         const textLength = text.length;

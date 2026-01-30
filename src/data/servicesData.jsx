@@ -58,6 +58,10 @@ export const servicesData = {
         subtitle: "Factory-Finish Restoration",
         icon: <FaSprayCan />,
         description: "Accidents happen, but they don't have to leave a permanent mark. Our state-of-the-art paint booth and expert technicians ensure color matching perfection and seamless blending. From minor dings to major restorations, we bring your car back to life.",
+        showcaseImages: [
+            { src: "/logo/galsort.webp", alt: "XPEL PPF" },
+            { src: "/logo/kapci.png", alt: "SUNTEK PPF" },
+        ],
         heroImage: ceramicImg, // Placeholder, reusing existing usually fine or generic
         benefits: [
             { title: "Color Match", desc: "Computerized color matching for invisible repairs." },
@@ -102,6 +106,26 @@ export const servicesData = {
             "Warranty Registration"
         ]
     },
+    'customization': {
+        title: "Vehicle Customization",
+        subtitle: "Make It Yours",
+        icon: <FaTools />,
+        description: "Transform your car with tasteful, functional upgrades. From lighting, interior enhancements, and styling add-ons to off-road accessories and convenience features, our customization work focuses on clean installation, factory-like finish, and long-term reliability.",
+        heroImage: interiorImg,
+        benefits: [
+            { title: "Clean Fit & Finish", desc: "OEM-style installation with proper routing and mounting." },
+            { title: "Premium Components", desc: "Trusted brands and durable materials." },
+            { title: "Functional Upgrades", desc: "Improve comfort, visibility, and usability." },
+            { title: "Personal Style", desc: "A unique look that matches your taste." }
+        ],
+        process: [
+            "Requirement Discussion & Recommendations",
+            "Parts Selection & Quote",
+            "Professional Installation & Wiring (if applicable)",
+            "Testing & Final Quality Check",
+            "Delivery Walkthrough"
+        ]
+    },
     'ppf': {
         title: "Paint Protection Films (PPF)",
         subtitle: "Invisible Armor",
@@ -126,6 +150,26 @@ export const servicesData = {
             "Pattern Plotting or Custom Cutting",
             "Wet Installation with Slip Solution",
             "Squeegee & Edge Wrapping"
+        ]
+    },
+    'ecu-remap-coding': {
+        title: "ECU Remap & Coding",
+        subtitle: "Smarter Performance",
+        icon: <FaCogs />,
+        description: "Unlock smoother drivability and optimized performance with safe ECU remaps and professional coding. We focus on reliability-first tuning, clean diagnostics, and feature activation/custom coding where supported for your vehicle.",
+        heroImage: ceramicImg,
+        benefits: [
+            { title: "Optimized Driveability", desc: "Smoother throttle response and refined power delivery." },
+            { title: "Reliability First", desc: "Safe approach with proper checks and validation." },
+            { title: "Feature Coding", desc: "Activate supported comfort and convenience features." },
+            { title: "Diagnostics Support", desc: "Pre/post health checks and guidance." }
+        ],
+        process: [
+            "Vehicle Scan & Health Check",
+            "Backup / Read Stock File (where applicable)",
+            "Remap / Coding Changes",
+            "Testing & Validation Drive",
+            "Handover + After-Support"
         ]
     },
     'wraps': {

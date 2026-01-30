@@ -70,8 +70,7 @@ const ServiceDetail = () => {
                                     className="mb-10"
                                 >
                                     <div className="flex items-end justify-between gap-4 mb-4">
-                                        <h2 className="text-xl font-bold text-white">PPF Film Brands</h2>
-                                        <span className="text-xs text-gray-500">Trusted partners</span>
+                                        <h2 className="text-xl font-bold text-white">Trusted partners</h2>
                                     </div>
 
                                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
