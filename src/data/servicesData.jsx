@@ -78,7 +78,7 @@ export const servicesData = {
         ]
     },
     'accessories': {
-        title: "Car Accessories",
+        title: "Vehicle Customization",
         subtitle: "Upgrade Your Drive",
         icon: <FaCogs />,
         description: "Personalize your vehicle with our range of premium accessories. From dash cams and ambient lighting to seat covers and custom mats, we offer high-quality installations that enhance comfort, style, and utility.",

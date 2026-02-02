@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import ServiceEnquiryModal from './ServiceEnquiryModal';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [enquiryOpen, setEnquiryOpen] = useState(false);
 
     const services = [
         { name: "Ceramic & Graphene Coatings", link: "/services/coatings" },
         { name: "Detailing & Interior Cleaning", link: "/services/detailing" },
         { name: "Denting & Painting", link: "/services/denting-painting" },
-        { name: "Vehicle Customization", link: "/services/accessories" },
-        // { name: "Vehicle Customization", link: "/services/customization" },
+        { name: "Vehicle Customization", link: "/services/customization" },
         { name: "Paint Protection Films", link: "/services/ppf" },
         { name: "ECU Remap & Coding", link: "/services/ecu-remap-coding" },
         { name: "Wrap Jobs", link: "/services/wraps" },
@@ -72,6 +73,14 @@ const Navbar = () => {
                             </div>
 
                             <NavLink to="/gallery" className={({ isActive }) => `px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive ? 'text-yellow-400' : 'text-gray-300 hover:text-white'}`}>Gallery</NavLink>
+
+                            <button
+                                type="button"
+                                onClick={() => setEnquiryOpen(true)}
+                                className="px-4 py-2 rounded-md text-sm font-bold tracking-wide bg-yellow-500 text-black hover:bg-yellow-400 transition-colors"
+                            >
+                                Service Enquiry
+                            </button>
                             <NavLink to="/contact" className={({ isActive }) => `px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-white hover:bg-gray-700'}`}>Contact Us</NavLink>
                         </div>
                     </div>
@@ -119,10 +128,23 @@ const Navbar = () => {
                         </div>
 
                         <NavLink to="/gallery" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Gallery</NavLink>
+
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setIsOpen(false);
+                                setEnquiryOpen(true);
+                            }}
+                            className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-black bg-yellow-500 hover:bg-yellow-600 mt-2"
+                        >
+                            Service Enquiry
+                        </button>
                         <NavLink to="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-black bg-yellow-500 hover:bg-yellow-600 mt-4">Contact Us</NavLink>
                     </div>
                 </div>
             )}
+
+            <ServiceEnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} />
         </nav>
     );
 };
